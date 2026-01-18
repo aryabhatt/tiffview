@@ -1,0 +1,11 @@
+[package]
+name = "tiffview"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+eframe = "0.29"
+egui = "0.29"
+tiff = "0.9"
+image = "0.25"
+num-traits = "0.2.19"
