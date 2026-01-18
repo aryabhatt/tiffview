@@ -135,6 +135,7 @@ pub fn run(images: Vec<Image>) -> Result<(), eframe::Error> {
         viewport: egui::ViewportBuilder::default()
             .with_inner_size(initial_size)
             .with_title("tiffview"),
+        multisampling: 0,
         ..Default::default()
     };
 
