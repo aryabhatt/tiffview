@@ -1,6 +1,6 @@
 # tiffview
 
-A lightweight TIFF image viewer built with Rust and egui.
+A lightweight multi-page TIFF image viewer CLI tool.
 
 ## Features
 
@@ -13,9 +13,14 @@ A lightweight TIFF image viewer built with Rust and egui.
 
 ```bash
 cargo build --release
+cargo install --path .
 ```
+Alternatively, install directly from GitHub.
+```bash
+cargo install --git https://github.com/aryabhatt/tiffview.git
+```
+The executable will be available in `~/.cargo/bin`. 
 
-The binary will be available at `target/release/tiffview`.
 
 ## Usage
 
