@@ -14,8 +14,7 @@
 namespace tomocam::tiff {
 
     template <typename T>
-    concept single32_t =
-        std::is_same_v<T, float> || std::is_same_v<T, uint32_t>;
+    concept single32_t = std::is_same_v<T, float> || std::is_same_v<T, uint32_t>;
 
     template <typename single32_t>
     inline Array<single32_t> read(std::string filename) {
@@ -39,7 +38,8 @@ namespace tomocam::tiff {
         }
 
         if (bits != sizeof(single32_t) * 8) {
-            std::cerr << "Error: TIFF has " << bits << "-bit samples, but template expects " 
+            std::cerr << "Error: TIFF has " << bits
+                      << "-bit samples, but template expects "
                       << sizeof(single32_t) * 8 << "-bit samples" << std::endl;
             TIFFClose(tif_);
             throw std::runtime_error("bit depth mismatch");
@@ -47,8 +47,8 @@ namespace tomocam::tiff {
 
         // allocate memory
         uint32_t nscls = static_cast<uint32_t>(npages);
-        uint32_t nrows = static_cast<uint32_t>(w);
-        uint32_t ncols = static_cast<uint32_t>(h);
+        uint32_t nrows = static_cast<uint32_t>(h);
+        uint32_t ncols = static_cast<uint32_t>(w);
         Array<single32_t> data(nscls, nrows, ncols);
 
         single32_t *buf = (single32_t *)_TIFFmalloc(w * sizeof(single32_t));
@@ -107,8 +107,7 @@ namespace tomocam::tiff {
                 for (uint32_t k = 0; k < width; k++) buf[k] = data[{i, j, k}];
 
                 if (TIFFWriteScanline(tif_, buf, j) < 0) {
-                    std::cerr << "Error wrtiting data to tif file."
-                              << std::endl;
+                    std::cerr << "Error wrtiting data to tif file." << std::endl;
                     std::exit(2);
                 }
             }
