@@ -11,10 +11,11 @@
 #include "image_viewer.h"
 #include "io/tiff/tiffio.h"
 
-ImageViewer::ImageViewer(const tomocam::Array<float> &images, QWidget *parent) :
-    QGraphicsView(parent),
-    imageStack(images),
-    currentIndex(0) {
+// wrap idx into [0, n) for any signed idx; n must be > 0
+static int wrapIndex(int idx, int n) { return ((idx % n) + n) % n; }
+
+ImageViewer::ImageViewer(const tomocam::Array<uint8_t> &images, QWidget *parent)
+    : QGraphicsView(parent), imageStack(images), currentIndex(0) {
     scene = new QGraphicsScene(this);
     setScene(scene);
     setDragMode(QGraphicsView::ScrollHandDrag);
@@ -25,59 +26,38 @@ ImageViewer::ImageViewer(const tomocam::Array<float> &images, QWidget *parent) :
 
 void ImageViewer::updateImage() {
     scene->clear();
-    QImage img = floatArrayToQImage(imageStack.slice(currentIndex));
+    QImage img = ArrayToQImage(imageStack.slice(currentIndex));
     scene->addPixmap(QPixmap::fromImage(img));
     scene->setSceneRect(img.rect());
-    
-    setWindowTitle(QString("Page %1/%2").arg(currentIndex + 1).arg(imageStack.nslices()));
+
+    setWindowTitle(
+        QString("Page %1/%2").arg(currentIndex + 1).arg(imageStack.nslices()));
 }
 
-QImage ImageViewer::floatArrayToQImage(const tomocam::Slice<float> &array) {
-    int h = array.nrows;
-    int w = array.ncols;
-
-    // Find min/max for normalization and rescaling to unsigned int
-    float minVal = array[0];
-    float maxVal = array[0];
-    for (uint32_t y = 0; y < h; ++y) {
-        for (uint32_t x = 0; x < w; ++x) {
-            float val = array[y * w + x];
-            minVal = std::min(minVal, val);
-            maxVal = std::max(maxVal, val);
+QImage ImageViewer::ArrayToQImage(const tomocam::Slice<uint8_t> &arr) {
+    int width = arr.ncols;
+    int height = arr.nrows;
+    QImage img(width, height, QImage::Format_Grayscale8);
+    for (int y = 0; y < height; ++y) {
+        uchar *line = img.scanLine(y);
+        for (int x = 0; x < width; ++x) {
+            line[x] = static_cast<uchar>(arr[size_t(y) * width + x]);
         }
     }
-
-    // Create grayscale image by rescaling float32 to uint8
-    QImage img(w, h, QImage::Format_Grayscale8);
-    float range = maxVal - minVal;
-    
-    if (range > 0.0f) {
-        for (int y = 0; y < h; ++y) {
-            uchar *line = img.scanLine(y);
-            for (int x = 0; x < w; ++x) {
-                // Rescale float32 to unsigned int (0-255 for display)
-                float normalized = (array[y * w + x] - minVal) / range;
-                line[x] = static_cast<uchar>(normalized * 255.0f);
-            }
-        }
-    } else {
-        // Handle constant-value images
-        img.fill(128);
-    }
-    
     return img;
 }
 
 void ImageViewer::wheelEvent(QWheelEvent *event) {
-    auto nImgs = imageStack.nslices();
+    int nImgs = imageStack.nslices();
+    if (nImgs <= 0) return;
 
     int step = 1;
     if (event->modifiers() & Qt::ControlModifier) { step = 5; }
 
     if (event->angleDelta().y() > 0) {
-        currentIndex = (currentIndex + step) % nImgs;
+        currentIndex = wrapIndex(currentIndex + step, nImgs);
     } else {
-        currentIndex = (currentIndex - step + nImgs) % nImgs;
+        currentIndex = wrapIndex(currentIndex - step, nImgs);
     }
     updateImage();
 }
@@ -86,11 +66,14 @@ void ImageViewer::mousePressEvent(QMouseEvent *event) {
     QGraphicsView::mousePressEvent(event);
 }
 
-void ImageViewer::updateImageStack(const tomocam::Array<float> &arr) {
+void ImageViewer::updateImageStack(const tomocam::Array<uint8_t> &arr) {
     imageStack = arr;
     currentIndex = 0;
     updateImage();
 }
+
+void ImageViewer::zoomIn() { scale(1.2, 1.2); }
+void ImageViewer::zoomOut() { scale(1 / 1.2, 1 / 1.2); }
 
 void ImageViewer::keyPressEvent(QKeyEvent *event) {
 
@@ -102,14 +85,19 @@ void ImageViewer::keyPressEvent(QKeyEvent *event) {
     int nImgs = imageStack.nslices();
     int oldIndex = currentIndex;
     switch (event->key()) {
-        case Qt::Key_Up: currentIndex = (currentIndex + 1) % nImgs; break;
-        case Qt::Key_Down:
-            currentIndex = (currentIndex - 1 + nImgs) % nImgs;
+        case Qt::Key_Up: currentIndex = wrapIndex(currentIndex + 1, nImgs); break;
+        case Qt::Key_Down: currentIndex = wrapIndex(currentIndex - 1, nImgs); break;
+        case Qt::Key_PageUp:
+            currentIndex = wrapIndex(currentIndex + 5, nImgs);
             break;
-        case Qt::Key_PageUp: currentIndex = (currentIndex + 5) % nImgs; break;
-        case Qt::Key_PageDown: currentIndex = (currentIndex - 5) % nImgs; break;
+        case Qt::Key_PageDown:
+            currentIndex = wrapIndex(currentIndex - 5, nImgs);
+            break;
         case Qt::Key_Home: currentIndex = 0; break;
         case Qt::Key_End: currentIndex = nImgs - 1; break;
+        case Qt::Key_Z: zoomIn(); break;
+        case Qt::Key_X: zoomOut(); break;
+        case Qt::Key_R: fitInView(scene->sceneRect(), Qt::KeepAspectRatio); break;
         default: QGraphicsView::keyPressEvent(event); return;
     }
 

@@ -15,7 +15,8 @@ int main(int argc, char **argv) {
         std::cerr << "  Up/Down arrows : Navigate pages" << std::endl;
         std::cerr << "  PageUp/PageDown: Jump 5 pages" << std::endl;
         std::cerr << "  Home/End       : First/Last page" << std::endl;
-        std::cerr << "  Mouse wheel    : Navigate pages (Ctrl+wheel: 5 pages)" << std::endl;
+        std::cerr << "  Mouse wheel    : Navigate pages (Ctrl+wheel: 5 pages)"
+                  << std::endl;
         return 1;
     } else {
         filename = argv[1];
@@ -23,13 +24,14 @@ int main(int argc, char **argv) {
 
     QApplication app(argc, argv);
 
-    tomocam::Array<float> imageData;
-    
+    tomocam::Array<uint8_t> imageData;
+
     try {
-        imageData = tomocam::tiff::read<float>(filename);
+        imageData = tomocam::tiff::read(filename);
         std::cout << "Loaded TIFF file: " << filename << std::endl;
         std::cout << "  Pages: " << imageData.nslices() << std::endl;
-        std::cout << "  Dimensions: " << imageData.nrows() << " x " << imageData.ncols() << std::endl;
+        std::cout << "  Dimensions: " << imageData.nrows() << " x "
+                  << imageData.ncols() << std::endl;
     } catch (const std::exception &e) {
         std::cerr << "Error loading file: " << e.what() << std::endl;
         return 1;
@@ -41,7 +43,8 @@ int main(int argc, char **argv) {
     }
 
     ImageViewer viewer(imageData);
-    viewer.setWindowTitle(QString("TIFF Viewer - %1").arg(QString::fromStdString(filename)));
+    viewer.setWindowTitle(
+        QString("TIFF Viewer - %1").arg(QString::fromStdString(filename)));
     viewer.resize(800, 600);
     viewer.show();
 

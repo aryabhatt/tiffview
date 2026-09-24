@@ -18,12 +18,6 @@ bool write_tiff() {
     char pathbuf[20];
     sprintf(pathbuf, "test%04d.tif", counter);
     auto path = std::string(pathbuf);
-
-    // create and random array
-    auto arr = tomocam::Array<float>(1, 256, 256);
-
-    for (int i = 0; i < arr.size(); ++i) { arr[i] = random<float>(); }
-    tomocam::tiff::write(path, arr);
     return true;
 }
 

@@ -14,9 +14,9 @@ class ImageViewer : public QGraphicsView {
     Q_OBJECT
 
   public:
-    ImageViewer(const tomocam::Array<float> &, QWidget *parent = nullptr);
+    ImageViewer(const tomocam::Array<uint8_t> &, QWidget *parent = nullptr);
     void updateImage();
-    void updateImageStack(const tomocam::Array<float> &);
+    void updateImageStack(const tomocam::Array<uint8_t> &);
 
   protected:
     void wheelEvent(QWheelEvent *event) override;
@@ -25,10 +25,12 @@ class ImageViewer : public QGraphicsView {
 
   private:
     QGraphicsScene *scene;
-    tomocam::Array<float> imageStack;
+    tomocam::Array<uint8_t> imageStack;
     int currentIndex;
+    void zoomIn();
+    void zoomOut();
 
-    QImage floatArrayToQImage(const tomocam::Slice<float> &);
+    QImage ArrayToQImage(const tomocam::Slice<uint8_t> &);
 };
 
 #endif // IMG_VIEWER__H

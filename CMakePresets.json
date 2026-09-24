@@ -14,7 +14,7 @@
       "binaryDir": "${sourceDir}/build/debug",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_CXX_STANDARD": "17"
+        "CMAKE_CXX_STANDARD": "20"
       }
     },
     {
@@ -25,7 +25,20 @@
       "binaryDir": "${sourceDir}/build/release",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "CMAKE_CXX_STANDARD": "17"
+        "CMAKE_CXX_STANDARD": "20"
+      }
+    },
+    {
+      "name": "static",
+      "displayName": "Static Release",
+      "description": "Release build linked against static Qt in $HOME/opt/qt6-static",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/static",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_STANDARD": "20",
+        "CMAKE_PREFIX_PATH": "$env{HOME}/opt/qt6-static;$env{HOME}/opt/static-deps",
+        "TIFFVIEW_STATIC": "ON"
       }
     }
   ],
@@ -37,12 +50,10 @@
     {
       "name": "release",
       "configurePreset": "release"
-    }
-  ],
-  "testPresets": [
+    },
     {
-      "name": "debug-tests",
-      "configurePreset": "debug"
+      "name": "static",
+      "configurePreset": "static"
     }
   ]
 }
