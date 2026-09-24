@@ -42,6 +42,30 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}/home/dkumar/.local/bin/tiffview" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/dkumar/.local/bin/tiffview")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}/home/dkumar/.local/bin/tiffview"
+         RPATH "")
+  endif()
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/dkumar/.local/bin/tiffview")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/dkumar/.local/bin" TYPE EXECUTABLE FILES "/home/dkumar/patch_maker/build/release/tiffview")
+  if(EXISTS "$ENV{DESTDIR}/home/dkumar/.local/bin/tiffview" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/dkumar/.local/bin/tiffview")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/dkumar/.local/bin/tiffview")
+    endif()
+  endif()
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/dkumar/patch_maker/build/release/tests/cmake_install.cmake")

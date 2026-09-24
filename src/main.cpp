@@ -17,6 +17,8 @@ int main(int argc, char **argv) {
         std::cerr << "  Home/End       : First/Last page" << std::endl;
         std::cerr << "  Mouse wheel    : Navigate pages (Ctrl+wheel: 5 pages)"
                   << std::endl;
+        std::cerr << "  Ctrl+1/2/3     : View along Z/Y/X axis" << std::endl;
+        std::cerr << "  Ctrl+T         : Cycle view axis" << std::endl;
         return 1;
     } else {
         filename = argv[1];

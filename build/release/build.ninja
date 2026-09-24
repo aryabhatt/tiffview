@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: TomoView
+# Project: tiffview
 # Configurations: Release
 # =============================================================================
 
@@ -41,62 +41,54 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/dkumar/patch_maker/build/release/
 # =============================================================================
-# Object build statements for EXECUTABLE target tomoview
+# Object build statements for EXECUTABLE target tiffview
 
 
 #############################################
-# Order-only phony target for tomoview
+# Order-only phony target for tiffview
 
-build cmake_object_order_depends_target_tomoview: phony || tomoview_autogen tomoview_autogen/mocs_compilation.cpp tomoview_autogen/timestamp tomoview_autogen_timestamp_deps
+build cmake_object_order_depends_target_tiffview: phony || tiffview_autogen tiffview_autogen/mocs_compilation.cpp tiffview_autogen/timestamp tiffview_autogen_timestamp_deps
 
-build CMakeFiles/tomoview.dir/tomoview_autogen/mocs_compilation.cpp.o: CXX_COMPILER__tomoview_unscanned_Release /home/dkumar/patch_maker/build/release/tomoview_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_tomoview
+build CMakeFiles/tiffview.dir/tiffview_autogen/mocs_compilation.cpp.o: CXX_COMPILER__tiffview_unscanned_Release /home/dkumar/patch_maker/build/release/tiffview_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_tiffview
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/tomoview.dir/tomoview_autogen/mocs_compilation.cpp.o.d
+  DEP_FILE = CMakeFiles/tiffview.dir/tiffview_autogen/mocs_compilation.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++20 -fPIC
-  INCLUDES = -I/home/dkumar/patch_maker/build/release/tomoview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets
-  OBJECT_DIR = CMakeFiles/tomoview.dir
-  OBJECT_FILE_DIR = CMakeFiles/tomoview.dir/tomoview_autogen
+  INCLUDES = -I/home/dkumar/patch_maker/build/release/tiffview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets
+  OBJECT_DIR = CMakeFiles/tiffview.dir
+  OBJECT_FILE_DIR = CMakeFiles/tiffview.dir/tiffview_autogen
 
-build CMakeFiles/tomoview.dir/src/main.cpp.o: CXX_COMPILER__tomoview_unscanned_Release /home/dkumar/patch_maker/src/main.cpp || cmake_object_order_depends_target_tomoview
+build CMakeFiles/tiffview.dir/src/main.cpp.o: CXX_COMPILER__tiffview_unscanned_Release /home/dkumar/patch_maker/src/main.cpp || cmake_object_order_depends_target_tiffview
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/tomoview.dir/src/main.cpp.o.d
+  DEP_FILE = CMakeFiles/tiffview.dir/src/main.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++20 -fPIC
-  INCLUDES = -I/home/dkumar/patch_maker/build/release/tomoview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets
-  OBJECT_DIR = CMakeFiles/tomoview.dir
-  OBJECT_FILE_DIR = CMakeFiles/tomoview.dir/src
+  INCLUDES = -I/home/dkumar/patch_maker/build/release/tiffview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets
+  OBJECT_DIR = CMakeFiles/tiffview.dir
+  OBJECT_FILE_DIR = CMakeFiles/tiffview.dir/src
 
-build CMakeFiles/tomoview.dir/src/image_viewer.cpp.o: CXX_COMPILER__tomoview_unscanned_Release /home/dkumar/patch_maker/src/image_viewer.cpp || cmake_object_order_depends_target_tomoview
+build CMakeFiles/tiffview.dir/src/image_viewer.cpp.o: CXX_COMPILER__tiffview_unscanned_Release /home/dkumar/patch_maker/src/image_viewer.cpp || cmake_object_order_depends_target_tiffview
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/tomoview.dir/src/image_viewer.cpp.o.d
+  DEP_FILE = CMakeFiles/tiffview.dir/src/image_viewer.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++20 -fPIC
-  INCLUDES = -I/home/dkumar/patch_maker/build/release/tomoview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets
-  OBJECT_DIR = CMakeFiles/tomoview.dir
-  OBJECT_FILE_DIR = CMakeFiles/tomoview.dir/src
-
-build CMakeFiles/tomoview.dir/src/main_window.cpp.o: CXX_COMPILER__tomoview_unscanned_Release /home/dkumar/patch_maker/src/main_window.cpp || cmake_object_order_depends_target_tomoview
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/tomoview.dir/src/main_window.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fPIC
-  INCLUDES = -I/home/dkumar/patch_maker/build/release/tomoview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets
-  OBJECT_DIR = CMakeFiles/tomoview.dir
-  OBJECT_FILE_DIR = CMakeFiles/tomoview.dir/src
+  INCLUDES = -I/home/dkumar/patch_maker/build/release/tiffview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets
+  OBJECT_DIR = CMakeFiles/tiffview.dir
+  OBJECT_FILE_DIR = CMakeFiles/tiffview.dir/src
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target tomoview
+# Link build statements for EXECUTABLE target tiffview
 
 
 #############################################
-# Link the executable tomoview
+# Link the executable tiffview
 
-build tomoview: CXX_EXECUTABLE_LINKER__tomoview_Release CMakeFiles/tomoview.dir/tomoview_autogen/mocs_compilation.cpp.o CMakeFiles/tomoview.dir/src/main.cpp.o CMakeFiles/tomoview.dir/src/image_viewer.cpp.o CMakeFiles/tomoview.dir/src/main_window.cpp.o | /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2 /usr/lib/x86_64-linux-gnu/libtiff.so /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || tomoview_autogen tomoview_autogen_timestamp_deps
+build tiffview: CXX_EXECUTABLE_LINKER__tiffview_Release CMakeFiles/tiffview.dir/tiffview_autogen/mocs_compilation.cpp.o CMakeFiles/tiffview.dir/src/main.cpp.o CMakeFiles/tiffview.dir/src/image_viewer.cpp.o | /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2 /usr/lib/x86_64-linux-gnu/libtiff.so /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || tiffview_autogen tiffview_autogen_timestamp_deps
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2  /usr/lib/x86_64-linux-gnu/libtiff.so  /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2  /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so
-  OBJECT_DIR = CMakeFiles/tomoview.dir
+  OBJECT_DIR = CMakeFiles/tiffview.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = tomoview
-  TARGET_PDB = tomoview.dbg
+  TARGET_FILE = tiffview
+  TARGET_PDB = tiffview.dbg
 
 
 #############################################
@@ -136,37 +128,79 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 
 #############################################
-# Utility command for tomoview_autogen_timestamp_deps
+# Utility command for list_install_components
 
-build tomoview_autogen_timestamp_deps: phony CMakeFiles/tomoview_autogen_timestamp_deps
-
-
-#############################################
-# Utility command for tomoview_autogen
-
-build tomoview_autogen: phony CMakeFiles/tomoview_autogen tomoview_autogen/timestamp tomoview_autogen/mocs_compilation.cpp tomoview_autogen_timestamp_deps
+build list_install_components: phony
 
 
 #############################################
-# Custom command for tomoview_autogen/timestamp
+# Utility command for install
 
-build tomoview_autogen/timestamp tomoview_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}tomoview_autogen/timestamp ${cmake_ninja_workdir}tomoview_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /usr/lib/qt6/libexec/moc /usr/lib/qt6/libexec/uic || tomoview_autogen_timestamp_deps
-  COMMAND = cd /home/dkumar/patch_maker/build/release && /usr/bin/cmake -E cmake_autogen /home/dkumar/patch_maker/build/release/CMakeFiles/tomoview_autogen.dir/AutogenInfo.json Release && /usr/bin/cmake -E touch /home/dkumar/patch_maker/build/release/tomoview_autogen/timestamp && /usr/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/dkumar/patch_maker /home/dkumar/patch_maker /home/dkumar/patch_maker/build/release /home/dkumar/patch_maker/build/release /home/dkumar/patch_maker/build/release/tomoview_autogen/deps /home/dkumar/patch_maker/build/release/CMakeFiles/d/7ce3172560edf490cb2a412b1c91e5ae17b6db3aced57ba158636d7371a48f72.d
-  DESC = Automatic MOC and UIC for target tomoview
-  depfile = /home/dkumar/patch_maker/build/release/CMakeFiles/d/7ce3172560edf490cb2a412b1c91e5ae17b6db3aced57ba158636d7371a48f72.d
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/dkumar/patch_maker/build/release && /usr/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/dkumar/patch_maker/build/release && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/dkumar/patch_maker/build/release && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for tiffview_autogen_timestamp_deps
+
+build tiffview_autogen_timestamp_deps: phony CMakeFiles/tiffview_autogen_timestamp_deps
+
+
+#############################################
+# Utility command for tiffview_autogen
+
+build tiffview_autogen: phony CMakeFiles/tiffview_autogen tiffview_autogen/timestamp tiffview_autogen/mocs_compilation.cpp tiffview_autogen_timestamp_deps
+
+
+#############################################
+# Custom command for tiffview_autogen/timestamp
+
+build tiffview_autogen/timestamp tiffview_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}tiffview_autogen/timestamp ${cmake_ninja_workdir}tiffview_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /usr/lib/qt6/libexec/moc /usr/lib/qt6/libexec/uic || tiffview_autogen_timestamp_deps
+  COMMAND = cd /home/dkumar/patch_maker/build/release && /usr/bin/cmake -E cmake_autogen /home/dkumar/patch_maker/build/release/CMakeFiles/tiffview_autogen.dir/AutogenInfo.json Release && /usr/bin/cmake -E touch /home/dkumar/patch_maker/build/release/tiffview_autogen/timestamp && /usr/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/dkumar/patch_maker /home/dkumar/patch_maker /home/dkumar/patch_maker/build/release /home/dkumar/patch_maker/build/release /home/dkumar/patch_maker/build/release/tiffview_autogen/deps /home/dkumar/patch_maker/build/release/CMakeFiles/d/38749b8ff634b0c44072d953158e0aef67fcf74acb8084f1e199063ab36bbe61.d
+  DESC = Automatic MOC and UIC for target tiffview
+  depfile = /home/dkumar/patch_maker/build/release/CMakeFiles/d/38749b8ff634b0c44072d953158e0aef67fcf74acb8084f1e199063ab36bbe61.d
   restat = 1
 
 
 #############################################
-# Phony custom command for CMakeFiles/tomoview_autogen_timestamp_deps
+# Phony custom command for CMakeFiles/tiffview_autogen_timestamp_deps
 
-build CMakeFiles/tomoview_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/tomoview_autogen_timestamp_deps: phony /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2 /usr/lib/qt6/libexec/moc /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2 /usr/lib/x86_64-linux-gnu/libtiff.so /usr/lib/qt6/libexec/uic
+build CMakeFiles/tiffview_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/tiffview_autogen_timestamp_deps: phony /usr/lib/qt6/libexec/moc /usr/lib/x86_64-linux-gnu/libtiff.so /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2 /usr/lib/qt6/libexec/uic
 
 
 #############################################
-# Phony custom command for CMakeFiles/tomoview_autogen
+# Phony custom command for CMakeFiles/tiffview_autogen
 
-build CMakeFiles/tomoview_autogen | ${cmake_ninja_workdir}CMakeFiles/tomoview_autogen: phony tomoview_autogen/timestamp || tomoview_autogen_timestamp_deps
+build CMakeFiles/tiffview_autogen | ${cmake_ninja_workdir}CMakeFiles/tiffview_autogen: phony tiffview_autogen/timestamp || tiffview_autogen_timestamp_deps
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -251,6 +285,48 @@ build tests/rebuild_cache: phony tests/CMakeFiles/rebuild_cache.util
 
 
 #############################################
+# Utility command for list_install_components
+
+build tests/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build tests/CMakeFiles/install.util: CUSTOM_COMMAND tests/all
+  COMMAND = cd /home/dkumar/patch_maker/build/release/tests && /usr/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build tests/install: phony tests/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build tests/CMakeFiles/install/local.util: CUSTOM_COMMAND tests/all
+  COMMAND = cd /home/dkumar/patch_maker/build/release/tests && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build tests/install/local: phony tests/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build tests/CMakeFiles/install/strip.util: CUSTOM_COMMAND tests/all
+  COMMAND = cd /home/dkumar/patch_maker/build/release/tests && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build tests/install/strip: phony tests/CMakeFiles/install/strip.util
+
+
+#############################################
 # Utility command for tests_autogen_timestamp_deps
 
 build tests/tests_autogen_timestamp_deps: phony tests/CMakeFiles/tests_autogen_timestamp_deps
@@ -300,7 +376,7 @@ build tests_autogen_timestamp_deps: phony tests/tests_autogen_timestamp_deps
 #############################################
 # Folder: /home/dkumar/patch_maker/build/release
 
-build all: phony tomoview tests/all
+build all: phony tiffview tests/all
 
 # =============================================================================
 

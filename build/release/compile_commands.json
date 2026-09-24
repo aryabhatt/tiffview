@@ -1,37 +1,31 @@
 [
 {
   "directory": "/home/dkumar/patch_maker/build/release",
-  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/dkumar/patch_maker/build/release/tomoview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -o CMakeFiles/tomoview.dir/tomoview_autogen/mocs_compilation.cpp.o -c /home/dkumar/patch_maker/build/release/tomoview_autogen/mocs_compilation.cpp",
-  "file": "/home/dkumar/patch_maker/build/release/tomoview_autogen/mocs_compilation.cpp",
-  "output": "CMakeFiles/tomoview.dir/tomoview_autogen/mocs_compilation.cpp.o"
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/dkumar/patch_maker/build/release/tiffview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -o CMakeFiles/tiffview.dir/tiffview_autogen/mocs_compilation.cpp.o -c /home/dkumar/patch_maker/build/release/tiffview_autogen/mocs_compilation.cpp",
+  "file": "/home/dkumar/patch_maker/build/release/tiffview_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/tiffview.dir/tiffview_autogen/mocs_compilation.cpp.o"
 },
 {
   "directory": "/home/dkumar/patch_maker/build/release",
-  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/dkumar/patch_maker/build/release/tomoview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -o CMakeFiles/tomoview.dir/src/main.cpp.o -c /home/dkumar/patch_maker/src/main.cpp",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/dkumar/patch_maker/build/release/tiffview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -o CMakeFiles/tiffview.dir/src/main.cpp.o -c /home/dkumar/patch_maker/src/main.cpp",
   "file": "/home/dkumar/patch_maker/src/main.cpp",
-  "output": "CMakeFiles/tomoview.dir/src/main.cpp.o"
+  "output": "CMakeFiles/tiffview.dir/src/main.cpp.o"
 },
 {
   "directory": "/home/dkumar/patch_maker/build/release",
-  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/dkumar/patch_maker/build/release/tomoview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -o CMakeFiles/tomoview.dir/src/image_viewer.cpp.o -c /home/dkumar/patch_maker/src/image_viewer.cpp",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/dkumar/patch_maker/build/release/tiffview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -o CMakeFiles/tiffview.dir/src/image_viewer.cpp.o -c /home/dkumar/patch_maker/src/image_viewer.cpp",
   "file": "/home/dkumar/patch_maker/src/image_viewer.cpp",
-  "output": "CMakeFiles/tomoview.dir/src/image_viewer.cpp.o"
+  "output": "CMakeFiles/tiffview.dir/src/image_viewer.cpp.o"
 },
 {
   "directory": "/home/dkumar/patch_maker/build/release",
-  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/dkumar/patch_maker/build/release/tomoview_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -o CMakeFiles/tomoview.dir/src/main_window.cpp.o -c /home/dkumar/patch_maker/src/main_window.cpp",
-  "file": "/home/dkumar/patch_maker/src/main_window.cpp",
-  "output": "CMakeFiles/tomoview.dir/src/main_window.cpp.o"
-},
-{
-  "directory": "/home/dkumar/patch_maker/build/release",
-  "command": "/usr/bin/c++ -I/home/dkumar/patch_maker/build/release/tests/tests_autogen/include -I/home/dkumar/patch_maker/src -O3 -DNDEBUG -std=gnu++20 -o tests/CMakeFiles/tests.dir/tests_autogen/mocs_compilation.cpp.o -c /home/dkumar/patch_maker/build/release/tests/tests_autogen/mocs_compilation.cpp",
+  "command": "/usr/bin/clang++ -I/home/dkumar/patch_maker/build/release/tests/tests_autogen/include -I/home/dkumar/patch_maker/src -O3 -DNDEBUG -std=gnu++20 -o tests/CMakeFiles/tests.dir/tests_autogen/mocs_compilation.cpp.o -c /home/dkumar/patch_maker/build/release/tests/tests_autogen/mocs_compilation.cpp",
   "file": "/home/dkumar/patch_maker/build/release/tests/tests_autogen/mocs_compilation.cpp",
   "output": "tests/CMakeFiles/tests.dir/tests_autogen/mocs_compilation.cpp.o"
 },
 {
   "directory": "/home/dkumar/patch_maker/build/release",
-  "command": "/usr/bin/c++ -I/home/dkumar/patch_maker/build/release/tests/tests_autogen/include -I/home/dkumar/patch_maker/src -O3 -DNDEBUG -std=gnu++20 -o tests/CMakeFiles/tests.dir/tests.cpp.o -c /home/dkumar/patch_maker/tests/tests.cpp",
+  "command": "/usr/bin/clang++ -I/home/dkumar/patch_maker/build/release/tests/tests_autogen/include -I/home/dkumar/patch_maker/src -O3 -DNDEBUG -std=gnu++20 -o tests/CMakeFiles/tests.dir/tests.cpp.o -c /home/dkumar/patch_maker/tests/tests.cpp",
   "file": "/home/dkumar/patch_maker/tests/tests.cpp",
   "output": "tests/CMakeFiles/tests.dir/tests.cpp.o"
 }

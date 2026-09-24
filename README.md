@@ -8,6 +8,7 @@ A command-line application for viewing multi-page TIFF files with float32 data. 
 - Automatic rescaling from float32 to uint8 for display
 - Per-page dynamic range adjustment (min/max normalization)
 - Keyboard and mouse navigation
+- Re-orient the volume to view it along the Z, Y or X axis
 - Lightweight Qt-based GUI
 
 ## Building
@@ -59,6 +60,16 @@ cmake --build --preset conan-release
 | Home | Go to first page |
 | End | Go to last page |
 | Mouse Wheel | Navigate pages (hold Ctrl to jump 5 pages) |
+| Ctrl+1 | View along the Z axis (default): pages are the stack's slices |
+| Ctrl+2 | View along the Y axis |
+| Ctrl+3 | View along the X axis |
+| Ctrl+T | Cycle the view axis Z → Y → X → Z |
+| Z / X | Zoom in / out |
+| R | Fit image to window |
+
+Navigation keys act on the current view axis and wrap around at the ends. Each
+axis remembers its own position, so switching back returns to where you left
+off. The window title shows the axis and position, e.g. `Y 120/512`.
 
 ## Data Handling
 
