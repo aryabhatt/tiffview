@@ -133,3 +133,9 @@ The viewer uses the existing `tomocam::Array` and TIFF I/O infrastructure:
 - The rescaling is performed per-page, so each page is normalized independently
 - This ensures optimal contrast for each individual page
 - The original float32 data is preserved in memory (rescaling only affects display)
+
+## License
+
+TiffView is released under the [BSD 2-Clause License](LICENSE). It links
+against Qt 6 (LGPLv3) and libtiff; redistribute binaries with Qt linked
+dynamically and include their license notices.
