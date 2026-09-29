@@ -9,6 +9,7 @@ A command-line application for viewing multi-page TIFF files with float32 data. 
 - Per-page dynamic range adjustment (min/max normalization)
 - Keyboard and mouse navigation
 - Re-orient the volume to view it along the Z, Y or X axis
+- Cycle through Grayscale, Viridis and Inferno colormaps
 - Lightweight Qt-based GUI
 
 ## Building
@@ -66,6 +67,8 @@ cmake --build --preset conan-release
 | Ctrl+T | Cycle the view axis Z → Y → X → Z |
 | Z / X | Zoom in / out |
 | R | Fit image to window |
+| C | Cycle colormap: Grayscale → Viridis → Inferno → Grayscale |
+| Q | Quit |
 
 Navigation keys act on the current view axis and wrap around at the ends. Each
 axis remembers its own position, so switching back returns to where you left

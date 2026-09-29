@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 option(TIFFVIEW_STATIC "Link statically (needs a static Qt in CMAKE_PREFIX_PATH)" OFF)
 
 find_package(TIFF REQUIRED)
+find_package(Threads REQUIRED)
 
 if(TIFFVIEW_STATIC)
     # Resolve Qt's third-party dependencies (xcb, freetype, ...) to .a files.
@@ -29,12 +30,19 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_executable(tiffview
     src/main.cpp
     src/image_viewer.cpp
+    src/slice_cache.cpp
+    src/slice_cache_policy.cpp
+    src/config.cpp
+    src/colormap_lut.cpp
+    src/colormap.cpp
+    src/io/tiff/tiff_reader.cpp
 )
 
 target_link_libraries(tiffview PRIVATE
     Qt6::Core
     Qt6::Gui
     Qt6::Widgets
+    Threads::Threads
 )
 
 if(TIFFVIEW_STATIC)
