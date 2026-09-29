@@ -12,6 +12,7 @@
 #include <type_traits>
 
 #include "../array.h"
+#include "normalize.h"
 
 namespace tomocam::tiff {
 
@@ -19,25 +20,18 @@ namespace tomocam::tiff {
     template <typename T>
     concept U = std::unsigned_integral<T> || std::floating_point<T>;
 
+    // Normalizes each slice independently using its own min/max, rather
+    // than a single min/max over the whole volume. This matches the
+    // per-slice normalization used by the lazy single-slice reader, and
+    // avoids a full-volume pass before any pixels can be produced.
     template <typename U>
     auto normalize_to_u8(const Array<U> &data) -> Array<uint8_t> {
         Array<uint8_t> result(data.dims());
         if (data.size() == 0) return result;
-        U min_val = data[0], max_val = data[0];
-        for (const auto &val : data) {
-            if (val < min_val) min_val = val;
-            if (val > max_val) max_val = val;
-        }
-        U range = max_val - min_val;
-        if (range == 0) {
-            std::cerr << "Info: all values are the same, setting to 0" << std::endl;
-            std::fill(result.begin(), result.end(), 0);
-            return result;
-        }
 
-        for (size_t i = 0; i < data.size(); i++) {
-            result[i] = static_cast<uint8_t>(255.0 * (data[i] - min_val) / range);
-        }
+        size_t sliceSize = size_t(data.dims().n1) * data.dims().n2;
+        for (uint32_t i = 0; i < data.dims().n0; i++)
+            normalizeSliceToU8(&data.slice(i)[0], &result.slice(i)[0], sliceSize);
 
         return result;
     }
